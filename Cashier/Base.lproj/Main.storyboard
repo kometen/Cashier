@@ -39,7 +39,7 @@
                     <navigationItem key="navigationItem" title="Cashier Items" id="IgA-it-0oq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3gJ-B1-WDB">
                             <connections>
-                                <segue destination="SIh-fC-JyE" kind="modal" id="Huy-7V-CwA"/>
+                                <segue destination="SIh-fC-JyE" kind="modal" identifier="AddItem" id="Huy-7V-CwA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -69,4 +69,20 @@
 }
 delete */
 
+-(void)addItemViewControllerDidCancel:(AddItemViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)addItemViewController:(AddItemViewController *)controller didFinishAddingItem:(CashierItem *)item {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AddItem"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddItemViewController *controller = (AddItemViewController *)navigationController.topViewController;
+        controller.delegate = self;
+    }
+}
+
 @end

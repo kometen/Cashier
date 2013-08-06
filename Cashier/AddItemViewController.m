@@ -7,6 +7,7 @@
 //
 
 #import "AddItemViewController.h"
+#import "CashierItem.h"
 
 @interface AddItemViewController ()
 
@@ -34,13 +35,13 @@
 }
 
 -(IBAction)cancel {
-    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate addItemViewControllerDidCancel:self];
 }
 
 -(IBAction)done {
-    NSLog(@"content of text field: %@", self.textField.text);
-    
-    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    CashierItem *item = [[CashierItem alloc] init];
+    item.text = self.textField.text;
+    [self.delegate addItemViewController:self didFinishAddingItem:item];
 }
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {

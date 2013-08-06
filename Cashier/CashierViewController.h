@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddItemViewController.h"
 
-@interface CashierViewController : UITableViewController
+@interface CashierViewController : UITableViewController <AddItemViewControllerDelegate>
 
 -(IBAction)addItem;
 

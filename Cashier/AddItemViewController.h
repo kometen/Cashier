@@ -20,6 +20,7 @@
 
 @interface AddItemViewController : UITableViewController <UITextFieldDelegate>
 
+@property (nonatomic, weak) id <AddItemViewControllerDelegate> delegate;
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneBarButton;
 
