@@ -1,15 +1,13 @@
 //
-//  CashierViewController.h
+//  CashierItem.m
 //  Cashier
 //
 //  Created by Claus Guttesen on 04/08/13.
 //  Copyright (c) 2013 Claus Guttesen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CashierItem.h"
 
-@interface CashierViewController : UITableViewController
-
--(IBAction)addItem;
+@implementation CashierItem
 
 @end
