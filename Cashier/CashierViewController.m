@@ -22,12 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     items = [[NSMutableArray alloc] initWithCapacity:10];
-    
-    CashierItem *item;
-    
-    item = [[CashierItem alloc] init];
-    item.text = @"Brændstof";
-    [items addObject:item];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,18 +45,6 @@
     return cell;
 }
 
--(IBAction)addItem {
-    int newRowIndex = [items count];
-    
-    CashierItem *item = [[CashierItem alloc] init];
-    item.text = @"Ny række";
-    [items addObject:item];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
-    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
 /* delete
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     [items removeObjectAtIndex:indexPath.row];
@@ -76,6 +58,13 @@ delete */
 }
 
 -(void)addItemViewController:(AddItemViewController *)controller didFinishAddingItem:(CashierItem *)item {
+    int newRowIndex = [items count];
+    [items addObject:item];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
+    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

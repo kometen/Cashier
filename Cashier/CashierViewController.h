@@ -11,6 +11,4 @@
 
 @interface CashierViewController : UITableViewController <AddItemViewControllerDelegate>
 
--(IBAction)addItem;
-
 @end
