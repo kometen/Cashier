@@ -15,6 +15,7 @@
 
 -(void)addItemViewControllerDidCancel:(AddItemViewController *)controller;
 -(void)addItemViewController:(AddItemViewController *)controller didFinishAddingItem:(CashierItem *)item;
+-(void)addItemViewController:(AddItemViewController *)controller didFinishEditingItem:(CashierItem *)item;
 
 @end
 
@@ -23,6 +24,7 @@
 @property (nonatomic, weak) id <AddItemViewControllerDelegate> delegate;
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneBarButton;
+@property (nonatomic, strong) CashierItem *itemToEdit;
 
 -(IBAction)cancel;
 -(IBAction)done;

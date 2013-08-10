@@ -45,6 +45,16 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    CashierItem *item = [items objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"EditItem" sender:item];
+}
+
+-(void)configureTextForCell:(UITableViewCell *)cell withCashierItem:(CashierItem *)item {
+    UILabel *label = (UILabel *)[cell viewWithTag:1000];
+    label.text = item.text;
+}
+
 /* delete
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     [items removeObjectAtIndex:indexPath.row];
@@ -68,11 +78,24 @@ delete */
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)addItemViewController:(AddItemViewController *)controller didFinishEditingItem:(CashierItem *)item {
+    int index = [items indexOfObject:item];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [self configureTextForCell:cell withCashierItem:item];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AddItem"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         AddItemViewController *controller = (AddItemViewController *)navigationController.topViewController;
         controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"EditItem"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddItemViewController *controller = (AddItemViewController *)navigationController.topViewController;
+        controller.delegate = self;
+        controller.itemToEdit = sender;
     }
 }
 

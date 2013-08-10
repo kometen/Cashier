@@ -25,6 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (self.itemToEdit != nil) {
+        self.title = @"Edit Item";
+        self.textField.text = self.itemToEdit.text;
+        self.doneBarButton.enabled = YES;
+    }
     
     [self.textField becomeFirstResponder];
 }
@@ -39,9 +44,14 @@
 }
 
 -(IBAction)done {
-    CashierItem *item = [[CashierItem alloc] init];
-    item.text = self.textField.text;
-    [self.delegate addItemViewController:self didFinishAddingItem:item];
+    if (self.itemToEdit == nil) {
+        CashierItem *item = [[CashierItem alloc] init];
+        item.text = self.textField.text;
+        [self.delegate addItemViewController:self didFinishAddingItem:item];
+    } else {
+        self.itemToEdit.text = self.textField.text;
+        [self.delegate addItemViewController:self didFinishEditingItem:self.itemToEdit];
+    }
 }
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
