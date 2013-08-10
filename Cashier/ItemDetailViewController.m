@@ -1,19 +1,19 @@
 //
-//  AddItemViewController.m
+//  ItemDetailViewController.m
 //  Cashier
 //
 //  Created by Claus Guttesen on 06/08/13.
 //  Copyright (c) 2013 Claus Guttesen. All rights reserved.
 //
 
-#import "AddItemViewController.h"
+#import "ItemDetailViewController.h"
 #import "CashierItem.h"
 
-@interface AddItemViewController ()
+@interface ItemDetailViewController ()
 
 @end
 
-@implementation AddItemViewController
+@implementation ItemDetailViewController
 
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
@@ -40,17 +40,17 @@
 }
 
 -(IBAction)cancel {
-    [self.delegate addItemViewControllerDidCancel:self];
+    [self.delegate itemDetailViewControllerDidCancel:self];
 }
 
 -(IBAction)done {
     if (self.itemToEdit == nil) {
         CashierItem *item = [[CashierItem alloc] init];
         item.text = self.textField.text;
-        [self.delegate addItemViewController:self didFinishAddingItem:item];
+        [self.delegate itemDetailViewController:self didFinishAddingItem:item];
     } else {
         self.itemToEdit.text = self.textField.text;
-        [self.delegate addItemViewController:self didFinishEditingItem:self.itemToEdit];
+        [self.delegate itemDetailViewController:self didFinishEditingItem:self.itemToEdit];
     }
 }
 

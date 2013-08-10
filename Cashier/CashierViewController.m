@@ -63,11 +63,11 @@
 }
 delete */
 
--(void)addItemViewControllerDidCancel:(AddItemViewController *)controller {
+-(void)itemDetailViewControllerDidCancel:(ItemDetailViewController *)controller {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)addItemViewController:(AddItemViewController *)controller didFinishAddingItem:(CashierItem *)item {
+-(void)itemDetailViewController:(ItemDetailViewController *)controller didFinishAddingItem:(CashierItem *)item {
     int newRowIndex = [items count];
     [items addObject:item];
     
@@ -78,7 +78,7 @@ delete */
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)addItemViewController:(AddItemViewController *)controller didFinishEditingItem:(CashierItem *)item {
+-(void)itemDetailViewController:(ItemDetailViewController *)controller didFinishEditingItem:(CashierItem *)item {
     int index = [items indexOfObject:item];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -89,11 +89,11 @@ delete */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AddItem"]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        AddItemViewController *controller = (AddItemViewController *)navigationController.topViewController;
+        ItemDetailViewController *controller = (ItemDetailViewController *)navigationController.topViewController;
         controller.delegate = self;
     } else if ([segue.identifier isEqualToString:@"EditItem"]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        AddItemViewController *controller = (AddItemViewController *)navigationController.topViewController;
+        ItemDetailViewController *controller = (ItemDetailViewController *)navigationController.topViewController;
         controller.delegate = self;
         controller.itemToEdit = sender;
     }
