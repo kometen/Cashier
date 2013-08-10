@@ -14,7 +14,7 @@
 		4832D3B217AEB660005AAFEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4832D3B117AEB660005AAFEF /* main.m */; };
 		4832D3B617AEB660005AAFEF /* CashierAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4832D3B517AEB660005AAFEF /* CashierAppDelegate.m */; };
 		4832D3B917AEB660005AAFEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4832D3B717AEB660005AAFEF /* Main.storyboard */; };
-		4832D3BC17AEB660005AAFEF /* CashierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4832D3BB17AEB660005AAFEF /* CashierViewController.m */; };
+		4832D3BC17AEB660005AAFEF /* CashierlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4832D3BB17AEB660005AAFEF /* CashierlistViewController.m */; };
 		4832D3BE17AEB660005AAFEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4832D3BD17AEB660005AAFEF /* Images.xcassets */; };
 		4832D3C517AEB660005AAFEF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4832D3C417AEB660005AAFEF /* XCTest.framework */; };
 		4832D3C617AEB660005AAFEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4832D3A517AEB660005AAFEF /* Foundation.framework */; };
@@ -49,8 +49,8 @@
 		4832D3B417AEB660005AAFEF /* CashierAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashierAppDelegate.h; sourceTree = "<group>"; };
 		4832D3B517AEB660005AAFEF /* CashierAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashierAppDelegate.m; sourceTree = "<group>"; };
 		4832D3B817AEB660005AAFEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4832D3BA17AEB660005AAFEF /* CashierViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashierViewController.h; sourceTree = "<group>"; };
-		4832D3BB17AEB660005AAFEF /* CashierViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashierViewController.m; sourceTree = "<group>"; };
+		4832D3BA17AEB660005AAFEF /* CashierlistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashierlistViewController.h; sourceTree = "<group>"; };
+		4832D3BB17AEB660005AAFEF /* CashierlistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashierlistViewController.m; sourceTree = "<group>"; };
 		4832D3BD17AEB660005AAFEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4832D3C317AEB660005AAFEF /* CashierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4832D3C417AEB660005AAFEF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -125,8 +125,8 @@
 				4832D3B417AEB660005AAFEF /* CashierAppDelegate.h */,
 				4832D3B517AEB660005AAFEF /* CashierAppDelegate.m */,
 				4832D3B717AEB660005AAFEF /* Main.storyboard */,
-				4832D3BA17AEB660005AAFEF /* CashierViewController.h */,
-				4832D3BB17AEB660005AAFEF /* CashierViewController.m */,
+				4832D3BA17AEB660005AAFEF /* CashierlistViewController.h */,
+				4832D3BB17AEB660005AAFEF /* CashierlistViewController.m */,
 				486F4DB617AED5CA00F4DC10 /* CashierItem.h */,
 				486F4DB717AED5CA00F4DC10 /* CashierItem.m */,
 				4832D3BD17AEB660005AAFEF /* Images.xcassets */,
@@ -266,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4832D3B617AEB660005AAFEF /* CashierAppDelegate.m in Sources */,
-				4832D3BC17AEB660005AAFEF /* CashierViewController.m in Sources */,
+				4832D3BC17AEB660005AAFEF /* CashierlistViewController.m in Sources */,
 				486F4DB817AED5CA00F4DC10 /* CashierItem.m in Sources */,
 				48BDCABC17B145170026DFA3 /* ItemDetailViewController.m in Sources */,
 				4832D3B217AEB660005AAFEF /* main.m in Sources */,

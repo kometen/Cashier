@@ -8,14 +8,14 @@
 //
 
 
-#import "CashierViewController.h"
+#import "CashierlistViewController.h"
 #import "CashierItem.h"
 
-@interface CashierViewController ()
+@interface CashierlistViewController ()
 
 @end
 
-@implementation CashierViewController {
+@implementation CashierlistViewController {
     NSMutableArray *items;
 }
 

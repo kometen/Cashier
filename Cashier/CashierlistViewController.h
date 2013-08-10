@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ItemDetailViewController.h"
 
-@interface CashierViewController : UITableViewController <ItemDetailViewControllerDelegate>
+@interface CashierlistViewController : UITableViewController <ItemDetailViewControllerDelegate>
 
 @end
