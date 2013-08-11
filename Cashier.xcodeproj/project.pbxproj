@@ -21,8 +21,8 @@
 		4832D3C717AEB660005AAFEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4832D3A917AEB660005AAFEF /* UIKit.framework */; };
 		4832D3CF17AEB660005AAFEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4832D3CD17AEB660005AAFEF /* InfoPlist.strings */; };
 		4832D3D117AEB660005AAFEF /* CashierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4832D3D017AEB660005AAFEF /* CashierTests.m */; };
-		486F4DB817AED5CA00F4DC10 /* CashierItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 486F4DB717AED5CA00F4DC10 /* CashierItem.m */; };
-		486F4DB917AED5CA00F4DC10 /* CashierItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 486F4DB717AED5CA00F4DC10 /* CashierItem.m */; };
+		486F4DB817AED5CA00F4DC10 /* Cashierlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 486F4DB717AED5CA00F4DC10 /* Cashierlist.m */; };
+		486F4DB917AED5CA00F4DC10 /* Cashierlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 486F4DB717AED5CA00F4DC10 /* Cashierlist.m */; };
 		48BDCABC17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */; };
 		48BDCABD17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */; };
 /* End PBXBuildFile section */
@@ -57,8 +57,8 @@
 		4832D3CC17AEB660005AAFEF /* CashierTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CashierTests-Info.plist"; sourceTree = "<group>"; };
 		4832D3CE17AEB660005AAFEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4832D3D017AEB660005AAFEF /* CashierTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashierTests.m; sourceTree = "<group>"; };
-		486F4DB617AED5CA00F4DC10 /* CashierItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierItem.h; sourceTree = "<group>"; };
-		486F4DB717AED5CA00F4DC10 /* CashierItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashierItem.m; sourceTree = "<group>"; };
+		486F4DB617AED5CA00F4DC10 /* Cashierlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cashierlist.h; sourceTree = "<group>"; };
+		486F4DB717AED5CA00F4DC10 /* Cashierlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cashierlist.m; sourceTree = "<group>"; };
 		48BDCABA17B145170026DFA3 /* CashierlistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierlistDetailViewController.h; sourceTree = "<group>"; };
 		48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashierlistDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,8 +127,8 @@
 				4832D3B717AEB660005AAFEF /* Main.storyboard */,
 				4832D3BA17AEB660005AAFEF /* CashierlistViewController.h */,
 				4832D3BB17AEB660005AAFEF /* CashierlistViewController.m */,
-				486F4DB617AED5CA00F4DC10 /* CashierItem.h */,
-				486F4DB717AED5CA00F4DC10 /* CashierItem.m */,
+				486F4DB617AED5CA00F4DC10 /* Cashierlist.h */,
+				486F4DB717AED5CA00F4DC10 /* Cashierlist.m */,
 				4832D3BD17AEB660005AAFEF /* Images.xcassets */,
 				4832D3AC17AEB660005AAFEF /* Supporting Files */,
 			);
@@ -267,7 +267,7 @@
 			files = (
 				4832D3B617AEB660005AAFEF /* CashierAppDelegate.m in Sources */,
 				4832D3BC17AEB660005AAFEF /* CashierlistViewController.m in Sources */,
-				486F4DB817AED5CA00F4DC10 /* CashierItem.m in Sources */,
+				486F4DB817AED5CA00F4DC10 /* Cashierlist.m in Sources */,
 				48BDCABC17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */,
 				4832D3B217AEB660005AAFEF /* main.m in Sources */,
 			);
@@ -277,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				486F4DB917AED5CA00F4DC10 /* CashierItem.m in Sources */,
+				486F4DB917AED5CA00F4DC10 /* Cashierlist.m in Sources */,
 				48BDCABD17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */,
 				4832D3D117AEB660005AAFEF /* CashierTests.m in Sources */,
 			);

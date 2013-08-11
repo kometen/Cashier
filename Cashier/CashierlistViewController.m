@@ -9,7 +9,7 @@
 
 
 #import "CashierlistViewController.h"
-#import "CashierItem.h"
+#import "Cashierlist.h"
 
 @interface CashierlistViewController ()
 
@@ -37,7 +37,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CashierItem"];
     
-    CashierItem *item = [items objectAtIndex:indexPath.row];
+    Cashierlist *item = [items objectAtIndex:indexPath.row];
     
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
     label.text = item.text;
@@ -46,7 +46,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    CashierItem *item = [items objectAtIndex:indexPath.row];
+    Cashierlist *item = [items objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"EditItem" sender:item];
 }
 
@@ -55,7 +55,7 @@
     [self performSegueWithIdentifier:@"ShowCashierItems" sender:nil];
 }
 
--(void)configureTextForCell:(UITableViewCell *)cell withCashierItem:(CashierItem *)item {
+-(void)configureTextForCell:(UITableViewCell *)cell withCashierItem:(Cashierlist *)item {
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
     label.text = item.text;
 }
@@ -72,7 +72,7 @@ delete */
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishAddingItem:(CashierItem *)item {
+-(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishAddingItem:(Cashierlist *)item {
     int newRowIndex = [items count];
     [items addObject:item];
     
@@ -83,7 +83,7 @@ delete */
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishEditingItem:(CashierItem *)item {
+-(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishEditingItem:(Cashierlist *)item {
     int index = [items indexOfObject:item];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];

@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class CashierlistDetailViewController;
-@class CashierItem;
+@class Cashierlist;
 
 @protocol ItemDetailViewControllerDelegate <NSObject>
 
 -(void)itemDetailViewControllerDidCancel:(CashierlistDetailViewController *)controller;
--(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishAddingItem:(CashierItem *)item;
--(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishEditingItem:(CashierItem *)item;
+-(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishAddingItem:(Cashierlist *)item;
+-(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishEditingItem:(Cashierlist *)item;
 
 @end
 
@@ -24,7 +24,7 @@
 @property (nonatomic, weak) id <ItemDetailViewControllerDelegate> delegate;
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneBarButton;
-@property (nonatomic, strong) CashierItem *itemToEdit;
+@property (nonatomic, strong) Cashierlist *itemToEdit;
 
 -(IBAction)cancel;
 -(IBAction)done;

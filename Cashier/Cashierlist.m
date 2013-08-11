@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Claus Guttesen. All rights reserved.
 //
 
-#import "CashierItem.h"
+#import "Cashierlist.h"
 
-@implementation CashierItem
+@implementation Cashierlist
 
 @end

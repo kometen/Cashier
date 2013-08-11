@@ -7,7 +7,7 @@
 //
 
 #import "CashierlistDetailViewController.h"
-#import "CashierItem.h"
+#import "Cashierlist.h"
 
 @interface CashierlistDetailViewController ()
 
@@ -45,7 +45,7 @@
 
 -(IBAction)done {
     if (self.itemToEdit == nil) {
-        CashierItem *item = [[CashierItem alloc] init];
+        Cashierlist *item = [[Cashierlist alloc] init];
         item.text = self.textField.text;
         [self.delegate itemDetailViewController:self didFinishAddingItem:item];
     } else {
