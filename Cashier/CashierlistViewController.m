@@ -50,6 +50,11 @@
     [self performSegueWithIdentifier:@"EditItem" sender:item];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"ShowCashierItems");
+    [self performSegueWithIdentifier:@"ShowCashierItems" sender:nil];
+}
+
 -(void)configureTextForCell:(UITableViewCell *)cell withCashierItem:(CashierItem *)item {
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
     label.text = item.text;
@@ -63,11 +68,11 @@
 }
 delete */
 
--(void)itemDetailViewControllerDidCancel:(ItemDetailViewController *)controller {
+-(void)itemDetailViewControllerDidCancel:(CashierlistDetailViewController *)controller {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)itemDetailViewController:(ItemDetailViewController *)controller didFinishAddingItem:(CashierItem *)item {
+-(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishAddingItem:(CashierItem *)item {
     int newRowIndex = [items count];
     [items addObject:item];
     
@@ -78,7 +83,7 @@ delete */
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)itemDetailViewController:(ItemDetailViewController *)controller didFinishEditingItem:(CashierItem *)item {
+-(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishEditingItem:(CashierItem *)item {
     int index = [items indexOfObject:item];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -89,11 +94,11 @@ delete */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AddItem"]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        ItemDetailViewController *controller = (ItemDetailViewController *)navigationController.topViewController;
+        CashierlistDetailViewController *controller = (CashierlistDetailViewController *)navigationController.topViewController;
         controller.delegate = self;
     } else if ([segue.identifier isEqualToString:@"EditItem"]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        ItemDetailViewController *controller = (ItemDetailViewController *)navigationController.topViewController;
+        CashierlistDetailViewController *controller = (CashierlistDetailViewController *)navigationController.topViewController;
         controller.delegate = self;
         controller.itemToEdit = sender;
     }

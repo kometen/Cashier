@@ -1,19 +1,19 @@
 //
-//  ItemDetailViewController.m
+//  CashierlistDetailViewController.m
 //  Cashier
 //
 //  Created by Claus Guttesen on 06/08/13.
 //  Copyright (c) 2013 Claus Guttesen. All rights reserved.
 //
 
-#import "ItemDetailViewController.h"
+#import "CashierlistDetailViewController.h"
 #import "CashierItem.h"
 
-@interface ItemDetailViewController ()
+@interface CashierlistDetailViewController ()
 
 @end
 
-@implementation ItemDetailViewController
+@implementation CashierlistDetailViewController
 
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];

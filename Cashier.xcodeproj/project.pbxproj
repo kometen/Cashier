@@ -23,8 +23,8 @@
 		4832D3D117AEB660005AAFEF /* CashierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4832D3D017AEB660005AAFEF /* CashierTests.m */; };
 		486F4DB817AED5CA00F4DC10 /* CashierItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 486F4DB717AED5CA00F4DC10 /* CashierItem.m */; };
 		486F4DB917AED5CA00F4DC10 /* CashierItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 486F4DB717AED5CA00F4DC10 /* CashierItem.m */; };
-		48BDCABC17B145170026DFA3 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BDCABB17B145170026DFA3 /* ItemDetailViewController.m */; };
-		48BDCABD17B145170026DFA3 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BDCABB17B145170026DFA3 /* ItemDetailViewController.m */; };
+		48BDCABC17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */; };
+		48BDCABD17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +59,8 @@
 		4832D3D017AEB660005AAFEF /* CashierTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashierTests.m; sourceTree = "<group>"; };
 		486F4DB617AED5CA00F4DC10 /* CashierItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierItem.h; sourceTree = "<group>"; };
 		486F4DB717AED5CA00F4DC10 /* CashierItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashierItem.m; sourceTree = "<group>"; };
-		48BDCABA17B145170026DFA3 /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
-		48BDCABB17B145170026DFA3 /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
+		48BDCABA17B145170026DFA3 /* CashierlistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierlistDetailViewController.h; sourceTree = "<group>"; };
+		48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashierlistDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +120,8 @@
 		4832D3AB17AEB660005AAFEF /* Cashier */ = {
 			isa = PBXGroup;
 			children = (
-				48BDCABA17B145170026DFA3 /* ItemDetailViewController.h */,
-				48BDCABB17B145170026DFA3 /* ItemDetailViewController.m */,
+				48BDCABA17B145170026DFA3 /* CashierlistDetailViewController.h */,
+				48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */,
 				4832D3B417AEB660005AAFEF /* CashierAppDelegate.h */,
 				4832D3B517AEB660005AAFEF /* CashierAppDelegate.m */,
 				4832D3B717AEB660005AAFEF /* Main.storyboard */,
@@ -268,7 +268,7 @@
 				4832D3B617AEB660005AAFEF /* CashierAppDelegate.m in Sources */,
 				4832D3BC17AEB660005AAFEF /* CashierlistViewController.m in Sources */,
 				486F4DB817AED5CA00F4DC10 /* CashierItem.m in Sources */,
-				48BDCABC17B145170026DFA3 /* ItemDetailViewController.m in Sources */,
+				48BDCABC17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */,
 				4832D3B217AEB660005AAFEF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				486F4DB917AED5CA00F4DC10 /* CashierItem.m in Sources */,
-				48BDCABD17B145170026DFA3 /* ItemDetailViewController.m in Sources */,
+				48BDCABD17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */,
 				4832D3D117AEB660005AAFEF /* CashierTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ItemDetailViewController.h"
+#import "CashierlistDetailViewController.h"
 
 @interface CashierlistViewController : UITableViewController <ItemDetailViewControllerDelegate>
 

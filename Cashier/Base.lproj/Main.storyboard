@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <scenes>
-        <!--Cashierlist View Controller - Cashier Items-->
+        <!--Cashierlist View Controller - Cashier List-->
         <scene sceneID="Pc2-Gj-g8H">
             <objects>
                 <tableViewController id="C9X-X5-8r1" customClass="CashierlistViewController" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cashier Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQL-ay-8yz">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cashier List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQL-ay-8yz">
                                             <rect key="frame" x="20" y="11" width="224" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -36,7 +36,7 @@
                             <outlet property="delegate" destination="C9X-X5-8r1" id="g5w-R6-rNB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cashier Items" id="IgA-it-0oq">
+                    <navigationItem key="navigationItem" title="Cashier List" id="IgA-it-0oq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3gJ-B1-WDB">
                             <connections>
                                 <segue destination="SIh-fC-JyE" kind="modal" identifier="AddItem" id="Huy-7V-CwA"/>
@@ -45,16 +45,17 @@
                     </navigationItem>
                     <connections>
                         <segue destination="SIh-fC-JyE" kind="modal" identifier="EditItem" id="vN5-ft-MAG"/>
+                        <segue destination="L7R-bG-NTN" kind="push" identifier="ShowCashierItems" id="yqO-lF-tX6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgL-Hz-tUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="639" y="106"/>
         </scene>
-        <!--Item Detail View Controller - Add Item-->
+        <!--Cashierlist Detail View Controller - Add Item-->
         <scene sceneID="AG7-1U-QvS">
             <objects>
-                <tableViewController id="yEX-Mu-9j1" customClass="ItemDetailViewController" sceneMemberID="viewController">
+                <tableViewController id="yEX-Mu-9j1" customClass="CashierlistDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Jml-De-b5D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,6 +129,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lq7-5d-dCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="113" y="106"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ddw-Lo-kad">
+            <objects>
+                <tableViewController id="L7R-bG-NTN" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="svo-ee-zin">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e9m-Gg-dSx">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="e9m-Gg-dSx" id="d1S-sg-B5O">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="L7R-bG-NTN" id="ORW-4o-IDS"/>
+                            <outlet property="delegate" destination="L7R-bG-NTN" id="a1j-Fb-EIL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="waG-4d-dYS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qRN-sA-l1T"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nAM-iP-KJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="819"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RSw-Q5-MXe">
