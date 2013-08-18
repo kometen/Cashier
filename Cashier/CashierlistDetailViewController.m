@@ -25,9 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.itemToEdit != nil) {
+    if (self.cashierListToEdit != nil) {
         self.title = @"Edit Item";
-        self.textField.text = self.itemToEdit.text;
+        self.textField.text = self.cashierListToEdit.text;
         self.doneBarButton.enabled = YES;
     }
     
@@ -40,17 +40,17 @@
 }
 
 -(IBAction)cancel {
-    [self.delegate itemDetailViewControllerDidCancel:self];
+    [self.delegate cashierlistDetailViewControllerDidCancel:self];
 }
 
 -(IBAction)done {
-    if (self.itemToEdit == nil) {
+    if (self.cashierListToEdit == nil) {
         Cashierlist *item = [[Cashierlist alloc] init];
         item.text = self.textField.text;
-        [self.delegate itemDetailViewController:self didFinishAddingItem:item];
+        [self.delegate cashierlistDetailViewController:self didFinishAddingItem:item];
     } else {
-        self.itemToEdit.text = self.textField.text;
-        [self.delegate itemDetailViewController:self didFinishEditingItem:self.itemToEdit];
+        self.cashierListToEdit.text = self.textField.text;
+        [self.delegate cashierlistDetailViewController:self didFinishEditingItem:self.cashierListToEdit];
     }
 }
 

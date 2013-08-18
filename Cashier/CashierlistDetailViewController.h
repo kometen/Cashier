@@ -11,20 +11,20 @@
 @class CashierlistDetailViewController;
 @class Cashierlist;
 
-@protocol ItemDetailViewControllerDelegate <NSObject>
+@protocol CashierlistDetailViewControllerDelegate <NSObject>
 
--(void)itemDetailViewControllerDidCancel:(CashierlistDetailViewController *)controller;
--(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishAddingItem:(Cashierlist *)item;
--(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishEditingItem:(Cashierlist *)item;
+-(void)cashierlistDetailViewControllerDidCancel:(CashierlistDetailViewController *)controller;
+-(void)cashierlistDetailViewController:(CashierlistDetailViewController *)controller didFinishAddingItem:(Cashierlist *)item;
+-(void)cashierlistDetailViewController:(CashierlistDetailViewController *)controller didFinishEditingItem:(Cashierlist *)item;
 
 @end
 
 @interface CashierlistDetailViewController : UITableViewController <UITextFieldDelegate>
 
-@property (nonatomic, weak) id <ItemDetailViewControllerDelegate> delegate;
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneBarButton;
-@property (nonatomic, strong) Cashierlist *itemToEdit;
+@property (nonatomic, weak) id <CashierlistDetailViewControllerDelegate> delegate;
+@property (nonatomic, strong) Cashierlist *cashierListToEdit;
 
 -(IBAction)cancel;
 -(IBAction)done;

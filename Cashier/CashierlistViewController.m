@@ -15,13 +15,10 @@
 
 @end
 
-@implementation CashierlistViewController {
-    NSMutableArray *items;
-}
+@implementation CashierlistViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    items = [[NSMutableArray alloc] initWithCapacity:10];
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,29 +27,41 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        self.dataModel = [[DataModel alloc] init];
+    }
+    return self;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [items count];
+    return [self.dataModel.lists count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CashierItem"];
     
-    Cashierlist *item = [items objectAtIndex:indexPath.row];
+    Cashierlist *cashierlist = [self.dataModel.lists objectAtIndex:indexPath.row];
     
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    label.text = item.text;
+    label.text = cashierlist.text;
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    Cashierlist *item = [items objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"EditItem" sender:item];
+    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"CashierlistNavigationController"];
+    CashierlistDetailViewController *controller = (CashierlistDetailViewController *)navigationController.topViewController;
+    controller.delegate = self;
+    Cashierlist *cashierlist = [self.dataModel.lists objectAtIndex:indexPath.row];
+    controller.cashierListToEdit = cashierlist;
+    [self presentViewController:navigationController animated:YES completion:nil];
+//    [self performSegueWithIdentifier:@"CashierlistNavigationController" sender:cashierlist];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"ShowCashierItems");
-    [self performSegueWithIdentifier:@"ShowCashierItems" sender:nil];
+    Cashierlist *cashierlist = [self.dataModel.lists objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"ShowCashierEntries" sender:cashierlist];
 }
 
 -(void)configureTextForCell:(UITableViewCell *)cell withCashierItem:(Cashierlist *)item {
@@ -68,13 +77,14 @@
 }
 delete */
 
--(void)itemDetailViewControllerDidCancel:(CashierlistDetailViewController *)controller {
+// CashierlistDetailViewControllerDelegate
+-(void)cashierlistDetailViewControllerDidCancel:(CashierlistDetailViewController *)controller {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishAddingItem:(Cashierlist *)item {
-    int newRowIndex = [items count];
-    [items addObject:item];
+-(void)cashierlistDetailViewController:(CashierlistDetailViewController *)controller didFinishAddingItem:(Cashierlist *)item {
+    int newRowIndex = [self.dataModel.lists count];
+    [self.dataModel.lists addObject:item];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
     NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
@@ -83,24 +93,36 @@ delete */
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)itemDetailViewController:(CashierlistDetailViewController *)controller didFinishEditingItem:(Cashierlist *)item {
-    int index = [items indexOfObject:item];
+-(void)cashierlistDetailViewController:(CashierlistDetailViewController *)controller didFinishEditingItem:(Cashierlist *)item {
+    int index = [self.dataModel.lists indexOfObject:item];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     [self configureTextForCell:cell withCashierItem:item];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+// CashierEntryViewControllerDelegate
+-(void)cashierEntryViewControllerDidCancel:(CashierEntryViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"AddItem"]) {
+    if ([segue.identifier isEqualToString:@"AddCashierlist"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         CashierlistDetailViewController *controller = (CashierlistDetailViewController *)navigationController.topViewController;
         controller.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"EditItem"]) {
+/*    } else if ([segue.identifier isEqualToString:@"EditCashierlist"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         CashierlistDetailViewController *controller = (CashierlistDetailViewController *)navigationController.topViewController;
         controller.delegate = self;
-        controller.itemToEdit = sender;
+        controller.cashierListToEdit = sender;*/
+    } else if ([segue.identifier isEqualToString:@"ShowCashierEntries"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        CashierEntryViewController *controller = (CashierEntryViewController *)navigationController.topViewController;
+        //controller.delegate = self;
+        controller.entryToEdit = sender;
     }
 }
 

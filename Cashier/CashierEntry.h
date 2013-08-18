@@ -1,5 +1,5 @@
 //
-//  Cashierlist.h
+//  CashierDetail.h
 //  Cashier
 //
 //  Created by Claus Guttesen on 11/08/13.
@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cashierlist : NSObject
+@interface CashierEntry : NSObject
 
 @property (nonatomic, strong) NSString *text;
-@property (nonatomic, strong) NSMutableArray *entries;
+@property (nonatomic, strong) NSDate *dateAdded;
+@property (nonatomic, strong) NSString *comment;
 
 @end

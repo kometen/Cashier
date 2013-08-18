@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CashierlistDetailViewController.h"
+#import "CashierEntryViewController.h"
+#import "DataModel.h"
 
-@interface CashierlistViewController : UITableViewController <ItemDetailViewControllerDelegate>
+@interface CashierlistViewController : UITableViewController <CashierlistDetailViewControllerDelegate>
+
+@property (nonatomic, strong) DataModel *dataModel;
 
 @end

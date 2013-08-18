@@ -14,7 +14,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CashierItem" id="EBa-aA-hae">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="EBa-aA-hae" id="kWs-SI-OrC">
                                     <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
@@ -39,23 +39,22 @@
                     <navigationItem key="navigationItem" title="Cashier List" id="IgA-it-0oq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3gJ-B1-WDB">
                             <connections>
-                                <segue destination="SIh-fC-JyE" kind="modal" identifier="AddItem" id="Huy-7V-CwA"/>
+                                <segue destination="c6P-kX-dp6" kind="modal" identifier="AddCashierlist" id="EvJ-Wo-G1A"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="SIh-fC-JyE" kind="modal" identifier="EditItem" id="vN5-ft-MAG"/>
-                        <segue destination="L7R-bG-NTN" kind="push" identifier="ShowCashierItems" id="yqO-lF-tX6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgL-Hz-tUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="639" y="106"/>
         </scene>
-        <!--Cashierlist Detail View Controller - Add Item-->
+        <!--Cashier Entry View Controller - Add Entry-->
         <scene sceneID="AG7-1U-QvS">
             <objects>
-                <tableViewController id="yEX-Mu-9j1" customClass="CashierlistDetailViewController" sceneMemberID="viewController">
+                <tableViewController id="yEX-Mu-9j1" customClass="CashierEntryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Jml-De-b5D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +63,7 @@
                             <tableViewSection id="HYf-sx-le3">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lrO-BY-Shq">
-                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="lrO-BY-Shq" id="0oj-rY-lOg">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -91,7 +90,7 @@
                             <outlet property="delegate" destination="yEX-Mu-9j1" id="pjf-2P-fH9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Item" id="hYl-fh-PFo">
+                    <navigationItem key="navigationItem" title="Add Entry" id="hYl-fh-PFo">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NUq-bQ-PdL">
                             <connections>
                                 <action selector="cancel" destination="yEX-Mu-9j1" id="EXY-S9-t1e"/>
@@ -130,36 +129,65 @@
             </objects>
             <point key="canvasLocation" x="113" y="106"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Cashierlist Detail View Controller - Add Cashierlist-->
         <scene sceneID="ddw-Lo-kad">
             <objects>
-                <tableViewController id="L7R-bG-NTN" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="svo-ee-zin">
+                <tableViewController id="L7R-bG-NTN" customClass="CashierlistDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="svo-ee-zin">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e9m-Gg-dSx">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="e9m-Gg-dSx" id="d1S-sg-B5O">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="H0d-pt-kfv">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e9m-Gg-dSx">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="e9m-Gg-dSx" id="d1S-sg-B5O">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Cashierlist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="twa-4W-ghM">
+                                                    <rect key="frame" x="10" y="6" width="300" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="L7R-bG-NTN" eventType="editingDidEndOnExit" id="HTf-QH-vid"/>
+                                                        <outlet property="delegate" destination="L7R-bG-NTN" id="SuF-K9-91C"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="L7R-bG-NTN" id="ORW-4o-IDS"/>
                             <outlet property="delegate" destination="L7R-bG-NTN" id="a1j-Fb-EIL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="waG-4d-dYS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qRN-sA-l1T"/>
+                    <navigationItem key="navigationItem" title="Add Cashierlist" id="waG-4d-dYS">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="h3F-5z-RVP">
+                            <connections>
+                                <action selector="cancel" destination="L7R-bG-NTN" id="3Ew-OU-pb9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="uDL-6d-Xic">
+                            <connections>
+                                <action selector="done" destination="L7R-bG-NTN" id="DHD-Mb-lsW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButton" destination="uDL-6d-Xic" id="ibY-js-pD2"/>
+                        <outlet property="textField" destination="twa-4W-ghM" id="8B4-Ra-pas"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAM-iP-KJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1276" y="819"/>
+            <point key="canvasLocation" x="1802" y="819"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RSw-Q5-MXe">
@@ -179,13 +207,28 @@
             </objects>
             <point key="canvasLocation" x="1276" y="103"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GzE-jn-3my">
+            <objects>
+                <navigationController storyboardIdentifier="CashierlistNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="c6P-kX-dp6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mac-Vr-oea">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="L7R-bG-NTN" kind="relationship" relationship="rootViewController" id="LRn-c0-A8U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJ9-iy-lkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="819"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="vN5-ft-MAG"/>
-    </inferredMetricsTieBreakers>
 </document>

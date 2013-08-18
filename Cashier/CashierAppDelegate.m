@@ -7,6 +7,7 @@
 //
 
 #import "CashierAppDelegate.h"
+#import "CashierlistViewController.h"
 
 @implementation CashierAppDelegate
 
@@ -41,6 +42,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)saveData {
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    CashierlistViewController *controller = (CashierlistViewController *)[navigationController.viewControllers objectAtIndex:0];
+    [controller.dataModel saveCashierlists];
 }
 
 @end
