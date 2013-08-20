@@ -21,9 +21,9 @@
 
 @interface CashierlistDetailViewController : UITableViewController <UITextFieldDelegate>
 
+@property (nonatomic, weak) id <CashierlistDetailViewControllerDelegate> delegate;
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneBarButton;
-@property (nonatomic, weak) id <CashierlistDetailViewControllerDelegate> delegate;
 @property (nonatomic, strong) Cashierlist *cashierListToEdit;
 
 -(IBAction)cancel;

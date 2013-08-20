@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (self.cashierListToEdit != nil) {
-        self.title = @"Edit Item";
+        self.title = @"Edit Cashierlist";
         self.textField.text = self.cashierListToEdit.text;
         self.doneBarButton.enabled = YES;
     }

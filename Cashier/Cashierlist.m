@@ -17,4 +17,19 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super init])) {
+        self.text = [aDecoder decodeObjectForKey:@"Text"];
+        self.entries = [aDecoder decodeObjectForKey:@"Entries"];
+    }
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.text forKey:@"Text"];
+    [aCoder encodeObject:self.entries forKey:@"Entries"];
+}
+
 @end

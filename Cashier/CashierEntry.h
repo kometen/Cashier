@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CashierEntry : NSObject
+@interface CashierEntry : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *text;
-@property (nonatomic, strong) NSDate *dateAdded;
+//@property (nonatomic, strong) NSDate *dateAdded;
 @property (nonatomic, strong) NSString *comment;
 
 @end

@@ -56,12 +56,11 @@
     Cashierlist *cashierlist = [self.dataModel.lists objectAtIndex:indexPath.row];
     controller.cashierListToEdit = cashierlist;
     [self presentViewController:navigationController animated:YES completion:nil];
-//    [self performSegueWithIdentifier:@"CashierlistNavigationController" sender:cashierlist];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Cashierlist *cashierlist = [self.dataModel.lists objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"ShowCashierEntries" sender:cashierlist];
+    [self performSegueWithIdentifier:@"ShowCashierlist" sender:cashierlist];
 }
 
 -(void)configureTextForCell:(UITableViewCell *)cell withCashierItem:(Cashierlist *)item {
@@ -113,16 +112,11 @@ delete */
         UINavigationController *navigationController = segue.destinationViewController;
         CashierlistDetailViewController *controller = (CashierlistDetailViewController *)navigationController.topViewController;
         controller.delegate = self;
-/*    } else if ([segue.identifier isEqualToString:@"EditCashierlist"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        CashierlistDetailViewController *controller = (CashierlistDetailViewController *)navigationController.topViewController;
-        controller.delegate = self;
-        controller.cashierListToEdit = sender;*/
-    } else if ([segue.identifier isEqualToString:@"ShowCashierEntries"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        CashierEntryViewController *controller = (CashierEntryViewController *)navigationController.topViewController;
-        //controller.delegate = self;
-        controller.entryToEdit = sender;
+    } else if ([segue.identifier isEqualToString:@"ShowCashierlist"]) {
+        CashierEntryViewController *controller = segue.destinationViewController;
+        Cashierlist *list = sender;
+        NSLog(@"ShowCashierlist: %@", list.text);
+        controller.cashierlist = sender;
     }
 }
 

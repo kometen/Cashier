@@ -8,25 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class CashierEntryViewController;
-@class CashierEntry;
+@class Cashierlist;
 
-@protocol CashierEntryViewControllerDelegate <NSObject>
+@interface CashierEntryViewController : UITableViewController
 
--(void)cashierEntryViewControllerDidCancel:(CashierEntryViewController *)controller;
--(void)cashierEntryViewController:(CashierEntryViewController *)controller didFinishAddingEntry:(CashierEntry *)entry;
--(void)cashierEntryViewController:(CashierEntryViewController *)controller didFinishEditingEntry:(CashierEntry *)entry;
-
-@end
-
-@interface CashierEntryViewController : UITableViewController <UITextFieldDelegate>
-
-@property (nonatomic, weak) id <CashierEntryViewControllerDelegate> delegate;
-@property (nonatomic, strong) IBOutlet UITextField *textField;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *doneBarButton;
-@property (nonatomic, strong) CashierEntry *entryToEdit;
-
--(IBAction)cancel;
--(IBAction)done;
+@property (nonatomic, strong) Cashierlist *cashierlist;
 
 @end

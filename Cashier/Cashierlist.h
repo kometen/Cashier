@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cashierlist : NSObject
+@interface Cashierlist : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSMutableArray *entries;
