@@ -114,8 +114,6 @@ delete */
         controller.delegate = self;
     } else if ([segue.identifier isEqualToString:@"ShowCashierlist"]) {
         CashierEntryViewController *controller = segue.destinationViewController;
-        Cashierlist *list = sender;
-        NSLog(@"ShowCashierlist: %@", list.text);
         controller.cashierlist = sender;
     }
 }

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CashierEntryDetailViewController.h"
 
 @class Cashierlist;
 
-@interface CashierEntryViewController : UITableViewController
+@interface CashierEntryViewController : UITableViewController <CashierEntryDetailViewControllerDelegate>
 
 @property (nonatomic, strong) Cashierlist *cashierlist;
 

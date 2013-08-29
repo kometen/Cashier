@@ -10,8 +10,8 @@
 
 @interface CashierEntry : NSObject <NSCoding>
 
-@property (nonatomic, strong) NSString *text;
+@property (nonatomic, copy) NSString *text;
 //@property (nonatomic, strong) NSDate *dateAdded;
-@property (nonatomic, strong) NSString *comment;
+@property (nonatomic, copy) NSString *comment;
 
 @end

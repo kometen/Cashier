@@ -31,6 +31,8 @@
 		48BA31D617B9912F002B715A /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BA31D417B9912F002B715A /* DataModel.m */; };
 		48BDCABC17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */; };
 		48BDCABD17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */; };
+		48CC5C9017C53B82000036DB /* CashierEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC5C8F17C53B82000036DB /* CashierEntryDetailViewController.m */; };
+		48CC5C9117C53B82000036DB /* CashierEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC5C8F17C53B82000036DB /* CashierEntryDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		48BA31D417B9912F002B715A /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		48BDCABA17B145170026DFA3 /* CashierlistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierlistDetailViewController.h; sourceTree = "<group>"; };
 		48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashierlistDetailViewController.m; sourceTree = "<group>"; };
+		48CC5C8E17C53B82000036DB /* CashierEntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierEntryDetailViewController.h; sourceTree = "<group>"; };
+		48CC5C8F17C53B82000036DB /* CashierEntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashierEntryDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 				48BDCABB17B145170026DFA3 /* CashierlistDetailViewController.m */,
 				483C812C17B7ACAC00026A12 /* CashierEntryViewController.h */,
 				483C812D17B7ACAC00026A12 /* CashierEntryViewController.m */,
+				48CC5C8E17C53B82000036DB /* CashierEntryDetailViewController.h */,
+				48CC5C8F17C53B82000036DB /* CashierEntryDetailViewController.m */,
 				48BA31CF17B839E6002B715A /* Cashierlist.h */,
 				48BA31D017B839E6002B715A /* Cashierlist.m */,
 				483C812817B7A0C100026A12 /* CashierEntry.h */,
@@ -288,6 +294,7 @@
 				4832D3B617AEB660005AAFEF /* CashierAppDelegate.m in Sources */,
 				4832D3BC17AEB660005AAFEF /* CashierlistViewController.m in Sources */,
 				483C812A17B7A0C100026A12 /* CashierEntry.m in Sources */,
+				48CC5C9017C53B82000036DB /* CashierEntryDetailViewController.m in Sources */,
 				48BDCABC17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */,
 				4832D3B217AEB660005AAFEF /* main.m in Sources */,
 				483C812E17B7ACAC00026A12 /* CashierEntryViewController.m in Sources */,
@@ -301,6 +308,7 @@
 				483C812B17B7A0C100026A12 /* CashierEntry.m in Sources */,
 				48BDCABD17B145170026DFA3 /* CashierlistDetailViewController.m in Sources */,
 				48BA31D217B839E6002B715A /* Cashierlist.m in Sources */,
+				48CC5C9117C53B82000036DB /* CashierEntryDetailViewController.m in Sources */,
 				4832D3D117AEB660005AAFEF /* CashierTests.m in Sources */,
 				483C812F17B7ACAC00026A12 /* CashierEntryViewController.m in Sources */,
 				48BA31D617B9912F002B715A /* DataModel.m in Sources */,
