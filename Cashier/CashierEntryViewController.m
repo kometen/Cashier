@@ -15,17 +15,8 @@
 @end
 
 @implementation CashierEntryViewController
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}*/
 
 - (void)viewDidLoad {
-    NSLog(@"CashierEntryViewController viewDidLoad");
     [super viewDidLoad];
     self.title = self.cashierlist.text;
 }
@@ -45,7 +36,6 @@
 -(void)cashierEntryDetailViewController:(CashierEntryDetailViewController *)controller didFinishAddingEntry:(CashierEntry *)entry
 {
     int newRowIndex = [self.cashierlist.entries count];
-    NSLog(@"row index: %d, text: %@", newRowIndex, entry.text);
     [self.cashierlist.entries addObject:entry];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
     NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
@@ -57,7 +47,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"numberOfRowsInSection: %d", [self.cashierlist.entries count]);
     return [self.cashierlist.entries count];
 }
 
@@ -65,9 +54,15 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CashierlistEntry"];
     CashierEntry *entry = [self.cashierlist.entries objectAtIndex:indexPath.row];
-    NSLog(@"cellForRowAtIndexPath: %@", entry.text);
     [self configureTextForCell:cell withCashierlistEntry:entry];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    CashierEntry *entry = [self.cashierlist.entries objectAtIndex:indexPath.row];
+    NSLog(@"accessoryButtonTappedForRowWithIndexPath: %@", entry.text);
+    [self performSegueWithIdentifier:@"EditCashierEntry" sender:entry];
 }
 
 -(void)cashierEntryDetailViewControllerDidCancel:(CashierEntryDetailViewController *)controller
@@ -81,6 +76,11 @@
         UINavigationController *navigationController = segue.destinationViewController;
         CashierEntryDetailViewController *controller = (CashierEntryDetailViewController *)navigationController.topViewController;
         controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"EditCashierEntry"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        CashierEntryDetailViewController *controller = (CashierEntryDetailViewController *)navigationController.topViewController;
+        controller.delegate = self;
+        controller.entryToEdit = sender;
     }
 }
 
