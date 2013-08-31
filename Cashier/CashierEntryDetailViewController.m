@@ -28,7 +28,6 @@
 {
     [super viewDidLoad];
     if (self.entryToEdit != nil) {
-        NSLog(@"entryToEdit: %@", self.entryToEdit.text);
         self.title = @"Edit Entry";
         self.textField.text = self.entryToEdit.text;
     }
@@ -57,6 +56,9 @@
         CashierEntry *entry = [[CashierEntry alloc] init];
         entry.text = self.textField.text;
         [self.delegate cashierEntryDetailViewController:self didFinishAddingEntry:entry];
+    } else {
+        self.entryToEdit.text = self.textField.text;
+        [self.delegate cashierEntryDetailViewController:self didFinishEditingEntry:self.entryToEdit];
     }
 }
 

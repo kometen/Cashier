@@ -43,6 +43,15 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)cashierEntryDetailViewController:(CashierEntryDetailViewController *)controller didFinishEditingEntry:(CashierEntry *)entry
+{
+    int index = [self.cashierlist.entries indexOfObject:entry];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [self configureTextForCell:cell withCashierlistEntry:entry];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -61,7 +70,6 @@
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     CashierEntry *entry = [self.cashierlist.entries objectAtIndex:indexPath.row];
-    NSLog(@"accessoryButtonTappedForRowWithIndexPath: %@", entry.text);
     [self performSegueWithIdentifier:@"EditCashierEntry" sender:entry];
 }
 
