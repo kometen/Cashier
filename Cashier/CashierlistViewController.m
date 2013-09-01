@@ -50,10 +50,6 @@
     Cashierlist *cashierlist = [self.dataModel.lists objectAtIndex:indexPath.row];
     
     cell.textLabel.text = cashierlist.text;
-    
-//    UILabel *label = (UILabel *)[cell viewWithTag:1000];
-//    label.text = cashierlist.text;
-    
     return cell;
 }
 
