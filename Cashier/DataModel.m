@@ -8,6 +8,9 @@
 
 #import "DataModel.h"
 
+NSString *filename = @"Cashierlists";
+NSString *fileextension = @"plist";
+
 @implementation DataModel
 
 -(NSString *)documentsDirectory {
@@ -17,13 +20,14 @@
 }
 
 -(NSString *)dataFilePath {
-    return [[self documentsDirectory] stringByAppendingPathComponent:@"Cashierlists.plist"];
+    NSString *file = [filename stringByAppendingString:fileextension];
+    return [[self documentsDirectory] stringByAppendingPathComponent:file];
 }
 
 -(void)saveCashierlists {
     NSMutableData *data = [[NSMutableData alloc] init];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    [archiver encodeObject:self.lists forKey:@"Cashierlist"];
+    [archiver encodeObject:self.lists forKey:filename];
     [archiver finishEncoding];
     [data writeToFile:[self dataFilePath] atomically:YES];
 }
@@ -33,7 +37,7 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         NSData *data = [[NSData alloc] initWithContentsOfFile:path];
         NSKeyedUnarchiver *unarchiver  = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-        self.lists = [unarchiver decodeObjectForKey:@"Cashierlists"];
+        self.lists = [unarchiver decodeObjectForKey:filename];
         [unarchiver finishDecoding];
     } else {
         self.lists = [[NSMutableArray alloc] initWithCapacity:20];

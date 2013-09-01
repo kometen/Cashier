@@ -10,6 +10,10 @@
 
 @interface DataModel : NSObject
 
+extern NSString *filename;
+extern NSString *fileextension;
+extern NSString *file;
+
 @property (nonatomic, strong) NSMutableArray *lists;
 
 -(void)saveCashierlists;

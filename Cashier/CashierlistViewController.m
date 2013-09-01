@@ -35,16 +35,24 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"data model count: %d", [self.dataModel.lists count]);
     return [self.dataModel.lists count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CashierItem"];
+    static NSString *cellIdentifier = @"CashierItem";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
     
     Cashierlist *cashierlist = [self.dataModel.lists objectAtIndex:indexPath.row];
     
-    UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    label.text = cashierlist.text;
+    cell.textLabel.text = cashierlist.text;
+    
+//    UILabel *label = (UILabel *)[cell viewWithTag:1000];
+//    label.text = cashierlist.text;
     
     return cell;
 }
