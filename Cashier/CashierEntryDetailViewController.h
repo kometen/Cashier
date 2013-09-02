@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define MAX_LENGTH 8
+
 @class CashierEntryDetailViewController;
 @class CashierEntry;
 
@@ -23,6 +25,8 @@
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneBarButton;
 @property (nonatomic, weak) id <CashierEntryDetailViewControllerDelegate> delegate;
 @property (nonatomic, strong) CashierEntry *entryToEdit;
+@property (nonatomic, assign) int maximumFractionDigits;
+@property (nonatomic, strong) NSString *decimalSeparator;
 
 -(IBAction)cancel;
 -(IBAction)done;
